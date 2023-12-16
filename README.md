@@ -39,7 +39,7 @@ Embrace the future of parking with our Parking System App – where reservation 
 # Team Members List:
 Aruuke
 Amira
-Rayaba
+Raheba
 
 # Roles of Group Members:
 Aruuke: Project Manager
@@ -54,13 +54,13 @@ Amira: Backend Developer (JDBC, Java)
         Data Validation: Implement robust data validation mechanisms to ensure the integrity and security of the data stored in the database.
         Backend Testing: Conduct thorough testing of the backend functionality to identify and resolve any issues or bugs.
 
-Rayaba: Frontend Developer (JavaFX GUI, IntelliJ IDEA)
+Raheba: Frontend Developer (JavaFX GUI, IntelliJ IDEA)
         JavaFX GUI Design: Design the graphical user interface (GUI) for the parking system app using JavaFX, ensuring an intuitive and user-friendly experience.
         IntelliJ IDEA Development: Utilize IntelliJ IDEA as the integrated development environment (IDE) for coding and designing the frontend components.
         User Interaction: Implement features such as parking space selection, reservation confirmation, and transaction history display within the JavaFX GUI.
         Frontend Testing: Conduct thorough testing of the frontend to ensure that the GUI functions correctly and provides a positive user experience.
 
-Collaborative Tasks: Aruuke, Amira, Rayaba
+Collaborative Tasks: Aruuke, Amira, Raheba
         Integration Testing: Collaborate to perform integration testing to ensure seamless communication between the frontend and backend components.
         User Acceptance Testing (UAT): Coordinate with stakeholders to conduct UAT, gathering feedback and making necessary adjustments to meet user expectations.
         Documentation: Work together to document the codebase, including comments in the code, user manuals, and system documentation.
