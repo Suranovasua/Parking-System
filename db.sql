@@ -64,7 +64,7 @@ CREATE TABLE users (
     user_name VARCHAR(50) UNIQUE NOT NULL,
     password VARCHAR(255) NOT NULL,
     paymentCardNumber VARCHAR(16),
-    initialBalance DECIMAL(10, 2) DEFAULT 0.0;
+    initialBalance DECIMAL(10, 2) DEFAULT 0.0
 );
 
 INSERT INTO users (user_name, password, paymentCardNumber, initialBalance) VALUES
@@ -120,7 +120,6 @@ CREATE TABLE car_models (
     model_name VARCHAR(255) NOT NULL
 );
 
-Insert car models into the car_models table
 INSERT INTO car_models (model_name) VALUES
 ('Acura:ILX'),
 ('Acura:MDX'),
