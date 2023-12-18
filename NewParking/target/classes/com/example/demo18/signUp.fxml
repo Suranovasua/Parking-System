@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo18.SignUpController">
+   <children>
+      <Label layoutX="75.0" layoutY="98.0" text="User Name" />
+      <Label layoutX="75.0" layoutY="135.0" text="Password" />
+      <TextField fx:id="userNameTextField" layoutX="151.0" layoutY="94.0" />
+      <PasswordField fx:id="passwordField" layoutX="151.0" layoutY="131.0" />
+      <Button layoutX="331.0" layoutY="94.0" mnemonicParsing="false" onAction="#signUpButtonOnAction" prefHeight="25.0" prefWidth="239.0" text="Sign Up" />
+      <Button fx:id="closeButton" layoutX="331.0" layoutY="152.0" mnemonicParsing="false" onAction="#CloseButtonOnAction" prefHeight="25.0" prefWidth="239.0" text="Close" />
+      <Label fx:id="signUpMessage" layoutX="91.0" layoutY="61.0" prefHeight="17.0" prefWidth="189.0" text="Label" />
+      <Label layoutX="65.0" layoutY="177.0" text="Card Number" />
+      <TextField fx:id="paymentCardNumberTextField" layoutX="151.0" layoutY="173.0" />
+   </children>
+</AnchorPane>
