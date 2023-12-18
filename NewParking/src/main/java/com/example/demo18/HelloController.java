@@ -92,7 +92,7 @@ public class HelloController {
 
         try {
             // Fetch busy places from the database
-            PreparedStatement busyPlacesStmt = con.prepareStatement("SELECT DISTINCT parkingPlace FROM parking");
+            PreparedStatement busyPlacesStmt = con.prepareStatement("SELECT DISTINCT datefrom, dateto FROM parking");
             ResultSet busyPlacesResultSet = busyPlacesStmt.executeQuery();
             while (busyPlacesResultSet.next()) {
                 String busyPlace = busyPlacesResultSet.getString("parkingPlace");
