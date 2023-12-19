@@ -42,19 +42,19 @@ Amira
 Raheba
 
 # Roles of Group Members:
-Aruuke: Project Manager
+All of us: Project Manager
         Task Coordination: Aruuke is responsible for overseeing the entire project and ensuring that each team member understands their roles and responsibilities.
         Requirements Analysis: Work closely with stakeholders to gather and document the requirements for the parking system app.
         Timeline and Milestones: Develop a project timeline with milestones to track progress and ensure that the team meets deadlines.
         Communication: Facilitate effective communication within the team and with stakeholders. Provide regular updates on project status.
 
-Amira: Backend Developer (JDBC, Java)
+Amira, Raheba: Backend Developer (JDBC,PostgresSQL, Java)
         Database Design: Design the database schema for the parking system, considering factors such as parking spot details, user information, and transaction records.
         JDBC Implementation: Develop the backend logic using Java Database Connectivity (JDBC) to interact with the database, handle data retrieval, and manage transactions.
         Data Validation: Implement robust data validation mechanisms to ensure the integrity and security of the data stored in the database.
         Backend Testing: Conduct thorough testing of the backend functionality to identify and resolve any issues or bugs.
 
-Raheba: Frontend Developer (JavaFX GUI, IntelliJ IDEA)
+Aruuke: Frontend Developer (JavaFX GUI, IntelliJ IDEA)
         JavaFX GUI Design: Design the graphical user interface (GUI) for the parking system app using JavaFX, ensuring an intuitive and user-friendly experience.
         IntelliJ IDEA Development: Utilize IntelliJ IDEA as the integrated development environment (IDE) for coding and designing the frontend components.
         User Interaction: Implement features such as parking space selection, reservation confirmation, and transaction history display within the JavaFX GUI.
