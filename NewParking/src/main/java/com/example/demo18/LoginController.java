@@ -60,14 +60,11 @@ public class LoginController {
                     Stage newStage = new Stage();
                     newStage.setScene(new Scene(root, 800, 600));
                     newStage.setTitle("Hello, User!");
-
-                    // Show the new stage
+                    
                     newStage.show();
 
                     HelloController helloController = loader.getController();
                     helloController.setUserInfo(usernameTextField.getText());
-
-                    // Close the current stage
                     Stage currentStage = (Stage) cancelButton.getScene().getWindow();
                     currentStage.close();
                 } else {
