@@ -42,13 +42,7 @@ Amira
 Raheba
 
 # Roles of Group Members:
-All of us: Project Manager
-        Task Coordination: Aruuke is responsible for overseeing the entire project and ensuring that each team member understands their roles and responsibilities.
-        Requirements Analysis: Work closely with stakeholders to gather and document the requirements for the parking system app.
-        Timeline and Milestones: Develop a project timeline with milestones to track progress and ensure that the team meets deadlines.
-        Communication: Facilitate effective communication within the team and with stakeholders. Provide regular updates on project status.
-
-Amira, Raheba: Backend Developer (JDBC,PostgresSQL, Java)
+Amira, Raheba: Backend Developers (JDBC,PostgresSQL, Java)
         Database Design: Design the database schema for the parking system, considering factors such as parking spot details, user information, and transaction records.
         JDBC Implementation: Develop the backend logic using Java Database Connectivity (JDBC) to interact with the database, handle data retrieval, and manage transactions.
         Data Validation: Implement robust data validation mechanisms to ensure the integrity and security of the data stored in the database.
@@ -89,7 +83,7 @@ Connect()
 
 And its all in one file
 
-Overall is 50+ functions
+
 
 
 
@@ -118,7 +112,7 @@ https://t.me/suranovasua
 
 
 
-If there would be problem with Jar and Dependies
+If there would be problem with Jar and Dependencies
 <dependency>
     <groupId>org.postgresql</groupId>
     <artifactId>postgresql</artifactId>
