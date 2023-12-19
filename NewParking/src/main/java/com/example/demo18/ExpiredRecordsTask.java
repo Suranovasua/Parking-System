@@ -13,13 +13,13 @@ public class ExpiredRecordsTask {
         PreparedStatement pst = null;
 
         try {
-            // Connect to the database
+            
             String url = "jdbc:postgresql:registration";
             String username = "postgres";
             String password = "123456";
             con = DriverManager.getConnection(url, username, password);
 
-            // Delete records with dateTo in the past
+            
             String deleteQuery = "DELETE FROM parking WHERE dateTo < ?";
             pst = con.prepareStatement(deleteQuery);
             pst.setDate(1, java.sql.Date.valueOf(LocalDate.now()));
@@ -27,7 +27,7 @@ public class ExpiredRecordsTask {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            // Close resources
+            
             try {
                 if (pst != null) {
                     pst.close();
