@@ -15,9 +15,6 @@ Key Features:
 2. **Real-Time Availability:**
    Stay informed with real-time updates on parking space availability. Our app provides live information on vacant spots, helping you make informed decisions and avoid unnecessary delays.
 
-3. **Secure Cash Transfers:**
-   We understand the importance of secure transactions. Our Parking System App incorporates a robust payment gateway, allowing users to transfer cash seamlessly and confidently. Your financial information is protected, ensuring a safe and secure payment process.
-
 4. **Notification Alerts:**
    Receive timely notifications, including booking confirmations and reminders, to enhance your overall parking experience. Stay informed and in control throughout the entire process.
 
@@ -37,9 +34,9 @@ Embrace the future of parking with our Parking System App – where reservation 
 
 
 # Team Members List:
-Aruuke
-Amira
-Raheba
+Aruuke Suranova
+Amira Rakieva
+Raheba Mohammad Zahir
 
 # Roles of Group Members:
 Amira, Raheba: Backend Developers (JDBC,PostgresSQL, Java)
