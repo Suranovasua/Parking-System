@@ -1,12 +1,13 @@
-CREATE TABLE parking ( 
-    id SERIAL PRIMARY KEY, 
-    name VARCHAR(255) NOT NULL, 
-    carName VARCHAR(255) NOT NULL, 
-    carNumber VARCHAR(20) NOT NULL, 
-    dateFrom DATE NOT NULL, 
-    dateTo DATE NOT NULL, 
-    parkingPlace VARCHAR(2) NOT NULL 
+CREATE TABLE parking (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    carName VARCHAR(255) REFERENCES car_models(model_name) NOT NULL,
+    carNumber VARCHAR(20) NOT NULL,
+    dateFrom DATE NOT NULL,
+    dateTo DATE NOT NULL,
+    parkingPlace VARCHAR(2) NOT NULL
 );
+
 
 
 INSERT INTO parking (name, carName, carNumber, dateFrom, dateTo, parkingPlace) VALUES
@@ -62,9 +63,7 @@ INSERT INTO parking (name, carName, carNumber, dateFrom, dateTo, parkingPlace) V
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     user_name VARCHAR(50) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL,
-    paymentCardNumber VARCHAR(16),
-    initialBalance DECIMAL(10, 2) DEFAULT 0.0
+    password VARCHAR(255) NOT NULL
 );
 
 INSERT INTO users (user_name, password, paymentCardNumber, initialBalance) VALUES
@@ -117,9 +116,8 @@ INSERT INTO users (user_name, password, paymentCardNumber, initialBalance) VALUE
 
 CREATE TABLE car_models (
     id SERIAL PRIMARY KEY,
-    model_name VARCHAR(255) NOT NULL
+    model_name VARCHAR(255) UNIQUE NOT NULL
 );
-
 INSERT INTO car_models (model_name) VALUES
 ('Acura:ILX'),
 ('Acura:MDX'),
