@@ -64,7 +64,7 @@ public class HelloController {
     private ChoiceBox<String> choiceParkingPlace;
 
     @FXML
-    private ChoiceBox<CarModel> choiceCarModel; // New ChoiceBox for car models
+    private ChoiceBox<CarModel> choiceCarModel; 
     @FXML
     private Label welcomeLabel;
 
@@ -82,15 +82,15 @@ public class HelloController {
 
     public void initialize() {
         Connect();
-        updateChoiceParkingPlace(); // Update the ChoiceBox
-        loadCarModels(); // Load car models into the choiceCarModel ChoiceBox
+        updateChoiceParkingPlace(); 
+        loadCarModels(); 
         table();
     }
 
     private void updateChoiceParkingPlace() {
         ObservableList<String> availablePlaces = FXCollections.observableArrayList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99", "100", "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118", "119", "120", "121", "122", "123", "124", "125", "126", "127", "128", "129", "130", "131", "132", "133", "134", "135", "136", "137", "138", "139", "140", "141", "142", "143", "144", "145", "146", "147", "148", "149", "150", "151", "152", "153", "154", "155", "156", "157", "158", "159", "160", "161", "162", "163", "164", "165", "166", "167", "168", "169", "170", "171", "172", "173", "174", "175", "176", "177", "178", "179", "180", "181", "182", "183", "184", "185", "186", "187", "188", "189", "190", "191", "192", "193", "194", "195", "196", "197", "198", "199", "200", "201", "202", "203", "204", "205", "206", "207", "208", "209", "210", "211", "212", "213", "214", "215", "216", "217", "218", "219", "220", "221", "222", "223", "224", "225", "226", "227", "228", "229", "230", "231", "232", "233", "234", "235", "236", "237", "238", "239", "240", "241", "242", "243", "244", "245", "246", "247", "248", "249", "250", "251", "252", "253", "254", "255", "256", "257", "258", "259", "260", "261", "262", "263", "264", "265", "266", "267", "268", "269", "270", "271", "272", "273", "274", "275", "276", "277", "278", "279", "280", "281", "282", "283", "284", "285", "286", "287", "288", "289", "290", "291", "292", "293", "294", "295", "296", "297", "298", "299", "300");
         try {
-            // Fetch busy places from the database
+            
             PreparedStatement busyPlacesStmt = con.prepareStatement("SELECT DISTINCT datefrom, dateto FROM parking");
             ResultSet busyPlacesResultSet = busyPlacesStmt.executeQuery();
             while (busyPlacesResultSet.next()) {
@@ -108,11 +108,11 @@ public class HelloController {
         ObservableList<CarModel> carModels = FXCollections.observableArrayList();
 
         try {
-            // Fetch car models from the database
+            
             PreparedStatement carModelsStmt = con.prepareStatement("SELECT * FROM car_models");
             ResultSet carModelsResultSet = carModelsStmt.executeQuery();
 
-            // Populate the carModels list
+            
             while (carModelsResultSet.next()) {
                 String modelId = carModelsResultSet.getString("id");
                 String modelName = carModelsResultSet.getString("model_name");
@@ -120,7 +120,7 @@ public class HelloController {
                 carModels.add(carModel);
             }
 
-            // Set the car models in the ChoiceBox
+        
             choiceCarModel.setItems(carModels);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -129,22 +129,19 @@ public class HelloController {
     public void setUserInfo(String username) {
         this.username = username;
         updateWelcomeMessage();
-        updateBalance(); // Call a method to update the initial balance
+        updateBalance(); 
     }
     private void updateWelcomeMessage() {
         welcomeLabel.setText("Welcome " + username);
     }
     private void updateBalance() {
-        // Retrieve initial balance from the database based on the username
+        
         double initialBalance = getInitialBalance(username);
 
-        // Display the initial balance
+        
         balanceLabel.setText("Initial Balance: " + initialBalance);
     }
     private double getInitialBalance(String username) {
-        // Query the database to get the initial balance based on the username
-        // You need to implement this method based on your database schema
-        // Assuming you have a 'users' table with 'initialBalance' column
         String query = "SELECT initialBalance FROM users WHERE user_name = ?";
         try (PreparedStatement stmt = con.prepareStatement(query)) {
             stmt.setString(1, username);
@@ -156,27 +153,24 @@ public class HelloController {
             throw new RuntimeException(e);
         }
 
-        // Return a default value if the balance is not found
+        
         return 0.0;
     }
     @FXML
     void addBalanceButtonClicked(ActionEvent event) {
-        // Get the current initial balance
+        
         double currentBalance = getInitialBalance(username);
 
-        // Add 100 to the initial balance
+        
         double newBalance = currentBalance + 100;
 
-        // Update the database with the new balance
+        
         updateInitialBalance(username, newBalance);
 
-        // Update the UI to display the new balance
+    
         updateBalance();
     }
     private void updateInitialBalance(String username, double newBalance) {
-        // Update the 'initialBalance' in the 'users' table based on the username
-        // You need to implement this method based on your database schema
-        // Assuming you have a 'users' table with 'initialBalance' column
         String query = "UPDATE users SET initialBalance = ? WHERE user_name = ?";
         try (PreparedStatement stmt = con.prepareStatement(query)) {
             stmt.setDouble(1, newBalance);
@@ -187,22 +181,17 @@ public class HelloController {
         }
     }
     private void subtractFromInitialBalance(String username, double amount) {
-        // Get the current initial balance
+        
         double currentBalance = getInitialBalance(username);
 
-        // Check if there's enough money
         if (currentBalance < amount) {
-            // Show an alert indicating not enough money
-            return; // Stop further processing
+            return; 
         }
 
-        // Subtract the specified amount
         double newBalance = currentBalance - amount;
-
-        // Update the database with the new balance
+        
         updateInitialBalance(username, newBalance);
-
-        // Update the UI to display the new balance
+        
         updateBalance();
     }
     private void showNotEnoughMoneyAlert() {
@@ -226,14 +215,14 @@ public class HelloController {
 
         try {
             if (name.isEmpty() || carName == null || carNumber.isEmpty() || dateFrom == null || dateTo == null || parkingPlace == null) {
-                // Display an alert indicating that all fields must be filled
+                
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText("Incomplete Information");
                 alert.setContentText("Please fill in all the required information.");
 
                 alert.showAndWait();
-                return; // Exit the method if any field is empty
+                return; 
             }
             double currentBalance = getInitialBalance(username);
             if (currentBalance >= 0) {
@@ -254,7 +243,7 @@ public class HelloController {
 
                 alert.showAndWait();
 
-                updateChoiceParkingPlace(); // Update the ChoiceBox
+                updateChoiceParkingPlace(); 
                 table();
                 clearFields();
             } else {
@@ -269,7 +258,7 @@ public class HelloController {
         try {
             Connect();
 
-            // Delete records with dateTo in the past
+            
             String deleteQuery = "DELETE FROM parking WHERE dateTo < ?";
             pst = con.prepareStatement(deleteQuery);
             pst.setDate(1, java.sql.Date.valueOf(LocalDate.now()));
@@ -307,7 +296,7 @@ public class HelloController {
 
                 alert.showAndWait();
 
-                updateChoiceParkingPlace(); // Update the ChoiceBox
+                updateChoiceParkingPlace(); 
                 table();
             } catch (SQLException ex) {
                 System.out.println(ex.toString());
@@ -321,7 +310,7 @@ public class HelloController {
         myIndex = table.getSelectionModel().getSelectedIndex();
         id = Integer.parseInt(String.valueOf(table.getItems().get(myIndex).getId()));
         name = txtName.getText();
-        carName = choiceCarModel.getValue().getModelName(); // Use choiceCarModel instead of txtCarName
+        carName = choiceCarModel.getValue().getModelName(); 
         carNumber = txtCarNumber.getText();
         dateFrom = dateFromPicker.getValue().toString();
         dateTo = dateToPicker.getValue().toString();
@@ -344,7 +333,7 @@ public class HelloController {
 
                 alert.showAndWait();
 
-                updateChoiceParkingPlace(); // Update the ChoiceBox
+                updateChoiceParkingPlace(); 
                 table();
             } catch (SQLException ex) {
                 System.out.println(ex.toString());
