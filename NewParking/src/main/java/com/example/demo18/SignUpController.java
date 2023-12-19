@@ -26,7 +26,7 @@ public class SignUpController {
     @FXML
     private PasswordField passwordField;
     @FXML
-    private TextField paymentCardNumberTextField; // Added TextField for payment card number
+    private TextField paymentCardNumberTextField; 
 
     public void signUpButtonOnAction(ActionEvent event) throws IOException {
         if (userNameTextField.getText().isBlank() == false && passwordField.getText().isBlank() == false) {
@@ -38,10 +38,10 @@ public class SignUpController {
             newStage.setScene(new Scene(root, 800, 600));
             newStage.setTitle("Hello, User!");
 
-            // Show the new stage
+            
             newStage.show();
 
-            // Close the current stage
+            
             Stage currentStage = (Stage) closeButton.getScene().getWindow();
             currentStage.close();
         } else {
